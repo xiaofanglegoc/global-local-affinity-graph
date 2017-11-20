@@ -9,7 +9,7 @@ here is the code to generate the table IV for our paper
  graph and LO graph, for example:
  ```
  W_L0 = compute_region_similarity_Sparse_penalty(feature,3,centroid,Area);
- W_GLG=assignGraphValue(W,W_L0,global_nodes,local_nodes);
+ W_GLG=assignGraphValue(W,W_L0,global_nodes);
  ```
 
 - to combine different feature descriptor, 
