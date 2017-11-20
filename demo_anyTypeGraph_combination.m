@@ -130,8 +130,10 @@ for idxI =1:300
                     %%%%%%%%%%%%%%%%%%%%%%%%%
                     % L0 graph
                     W_L0 = compute_region_similarity_Sparse_penalty(feature,3,centroid,Area);
-                    W=assignGraphValue(W,W_L1,p1,local_nodes);
-                    W=assignGraphValue(W,W_L0,p2,local_nodes);
+                    %W=assignGraphValue(W,W_L1,p1,local_nodes);
+                    %W=assignGraphValue(W,W_L0,p2,local_nodes);
+                    W=assignGraphValue(W,W_L1,p1);
+                    W=assignGraphValue(W,W_L0,p2);
                
                 case'L0+LRR'
                     %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -146,8 +148,8 @@ for idxI =1:300
                     U = U(:,1:r);S = S(1:r);
                     U = U*diag(sqrt(S));
                     W_LRR = (U*U').^4;
-                    W=assignGraphValue(W,W_L0,p1,local_nodes);
-                    W=assignGraphValue(W,W_LRR,p2,local_nodes);
+                    W=assignGraphValue(W,W_L0,p1);
+                    W=assignGraphValue(W,W_LRR,p2);
             end
             W=sparse(W);
             Nk = size(seg{k},2); % number of superpixels in over-segmentation k
